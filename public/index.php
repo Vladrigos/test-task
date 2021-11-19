@@ -3,6 +3,7 @@
 use App\DataProvider\DataProvider;
 use App\DataProvider\DataProviderConfigurator;
 use App\DataProvider\DataProviderManager;
+use App\DataProvider\Decorator\CacheDecorator;
 use App\DataProvider\Decorator\LogDecorator;
 use App\DataProvider\Decorator\MySqlDecorator;
 
@@ -21,8 +22,9 @@ $container = new Container(require __DIR__ . 'dependencies.php');
 $configurator = new DataProviderConfigurator(
     $dataProvider,
     [
-        MySqlDecorator::class,
         LogDecorator::class,
+        MySqlDecorator::class,
+        CacheDecorator::class,
     ],
     $container
 );
