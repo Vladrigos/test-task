@@ -2,9 +2,10 @@
 
 namespace App\DataProvider\Decorator;
 
+use App\DataProvider\BaseDecoratorInterface;
 use App\DataProvider\DataProviderInterface;
 
-class BaseDecorator implements DataProviderInterface
+class BaseDecorator implements DataProviderInterface, BaseDecoratorInterface
 {
     private DataProviderInterface $provider;
 
