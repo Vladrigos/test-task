@@ -8,6 +8,9 @@ use JetBrains\PhpStorm\Pure;
 use Psr\Cache\CacheItemPoolInterface;
 use Psr\Cache\InvalidArgumentException;
 
+/**
+ * Конкретный декоратор, содержит новое поведение(кеш)
+ */
 class CacheDecorator extends BaseDecorator
 {
     #[Pure] public function __construct
@@ -18,6 +21,7 @@ class CacheDecorator extends BaseDecorator
     }
 
     /**
+     * Декоратор ищет сначала в кеше, если не находит -> в родителе
      * @throws InvalidArgumentException
      */
     public function get(array $request): array

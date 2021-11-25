@@ -9,6 +9,9 @@ use App\DataProvider\Decorator\MySqlDecorator;
 
 require dirname(__DIR__) . '/vendor/autoload.php';
 
+$container = new Container(require __DIR__ . 'dependencies.php');
+
+// Данные для отправки
 $data = ['some' => 'data'];
 
 $dataProvider = new DataProvider(
@@ -16,8 +19,6 @@ $dataProvider = new DataProvider(
     user: 'user',
     password: 'password'
 );
-
-$container = new Container(require __DIR__ . 'dependencies.php');
 
 $configurator = new DataProviderConfigurator(
     $dataProvider,

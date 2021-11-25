@@ -5,6 +5,7 @@ use App\DataProvider\Decorator\LogDecorator;
 use App\DataProvider\Decorator\MySqlDecorator;
 use Psr\Container\ContainerInterface;
 
+// Пример зависимостей для контейнера
 return [
     CacheDecorator::class => function (ContainerInterface $container) {
         return new CacheDecorator(

@@ -6,6 +6,9 @@ use App\DataProvider\FlusherInterface;
 use App\DataProvider\SomeConcreteRepositoryInterface;
 use JetBrains\PhpStorm\Pure;
 
+/**
+ * Конкретный декоратор, содержит новое поведение(данные из mysql)
+ */
 class MySqlDecorator extends BaseDecorator
 {
     #[Pure] public function __construct
@@ -16,6 +19,9 @@ class MySqlDecorator extends BaseDecorator
     {
     }
 
+    /**
+     * Декоратор ищет сначала в репозитории, если не находит -> в родителе
+     */
     public function get(array $request): array
     {
         $result = $this->repository->findByGuid($request['guid']);

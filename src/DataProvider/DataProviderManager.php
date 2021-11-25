@@ -2,6 +2,9 @@
 
 namespace App\DataProvider;
 
+/**
+ * Клиентский код, получает внешний источник данных, не знает как именно будут обрабатываться данные
+ */
 class DataProviderManager
 {
     public function __construct

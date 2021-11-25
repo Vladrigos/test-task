@@ -6,6 +6,9 @@ use Exception;
 use JetBrains\PhpStorm\Pure;
 use Psr\Log\LoggerInterface;
 
+/**
+ * Конкретный декоратор, содержит новое поведение(логирование)
+ */
 class LogDecorator extends BaseDecorator
 {
     #[Pure] public function __construct
@@ -15,6 +18,9 @@ class LogDecorator extends BaseDecorator
     {
     }
 
+    /**
+     * Оборачивает декорируемый компонент логами
+     */
     public function get(array $request): array
     {
         try {

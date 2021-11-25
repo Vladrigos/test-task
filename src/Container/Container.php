@@ -1,6 +1,7 @@
 <?php
 
 use Psr\Container\ContainerInterface;
+use Psr\Container\NotFoundExceptionInterface;
 
 class Container implements ContainerInterface
 {
@@ -11,6 +12,9 @@ class Container implements ContainerInterface
     {
     }
 
+    /**
+     *  @throws NotFoundExceptionInterface
+     */
     public function get(string $id)
     {
         // get service with id from container

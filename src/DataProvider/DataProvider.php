@@ -2,6 +2,9 @@
 
 namespace App\DataProvider;
 
+/**
+ * Конкретный компонент, содержит базовое поведение, которое впоследствии будем оборачивать
+ */
 class DataProvider implements DataProviderInterface
 {
     public function __construct
