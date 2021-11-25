@@ -35,4 +35,5 @@ $dataProviderManager = new DataProviderManager(
     $configurator->getDecoratedProvider()
 );
 
+//В итоге получит данные по цепочке из (MySql, Cache, Api) обёрнутые логгером при успешном и не успешном получении данных
 $dataProviderManager->get();

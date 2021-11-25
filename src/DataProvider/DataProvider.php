@@ -16,6 +16,9 @@ class DataProvider implements DataProviderInterface
     {
     }
 
+    /**
+     * Сделать запрос, получить данные по стороннему API
+     */
     public function get(array $request): array
     {
         // returns a response from external service
